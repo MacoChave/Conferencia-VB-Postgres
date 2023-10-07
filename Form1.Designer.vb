@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class MainForm
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel = New System.Windows.Forms.Panel()
@@ -35,16 +36,21 @@ Partial Class MainForm
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Db_confDataSet = New Conferencia.db_confDataSet()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioTableAdapter = New Conferencia.db_confDataSetTableAdapters.usuarioTableAdapter()
         Me.StatusStrip.SuspendLayout()
         Me.Panel.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db_confDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusStrip
         '
         Me.StatusStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 647)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 527)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Size = New System.Drawing.Size(1006, 26)
         Me.StatusStrip.TabIndex = 0
@@ -154,21 +160,36 @@ Partial Class MainForm
         '
         'DataGridView1
         '
-        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(448, 152)
+        Me.DataGridView1.Location = New System.Drawing.Point(469, 152)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(521, 447)
+        Me.DataGridView1.Size = New System.Drawing.Size(492, 281)
         Me.DataGridView1.TabIndex = 10
+        '
+        'Db_confDataSet
+        '
+        Me.Db_confDataSet.DataSetName = "db_confDataSet"
+        Me.Db_confDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataMember = "usuario"
+        Me.UsuarioBindingSource.DataSource = Me.Db_confDataSet
+        '
+        'UsuarioTableAdapter
+        '
+        Me.UsuarioTableAdapter.ClearBeforeFill = True
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1006, 673)
+        Me.ClientSize = New System.Drawing.Size(1006, 553)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnSave)
@@ -187,6 +208,8 @@ Partial Class MainForm
         Me.Panel.ResumeLayout(False)
         Me.Panel.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db_confDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,4 +228,7 @@ Partial Class MainForm
     Friend WithEvents btnSave As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Db_confDataSet As db_confDataSet
+    Friend WithEvents UsuarioBindingSource As BindingSource
+    Friend WithEvents UsuarioTableAdapter As db_confDataSetTableAdapters.usuarioTableAdapter
 End Class

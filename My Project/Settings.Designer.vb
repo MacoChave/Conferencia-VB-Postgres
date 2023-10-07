@@ -64,6 +64,18 @@ Namespace My
                 Return CType(Me("pgConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Host=db-conferencia.coa49vnnhx5t.us-east-1.rds.amazonaws.com;Database=db_conf;Use"& _ 
+            "rname=macochave;Password=Soy.tu.amo;SSL Mode=Require;TrustServerCertificate=True"& _ 
+            "")>  _
+        Public ReadOnly Property db_conn() As String
+            Get
+                Return CType(Me("db_conn"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
